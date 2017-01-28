@@ -30,12 +30,11 @@ public class MoneyTest2 {
 	@Test
 	public void testEquals2() {
 		assertTrue(!m12CHF.equals(null));
-		assertEquals(m12CHF, m12CHF);
-		assertEquals(m12CHF, new Money(12, "CHF"));
-		assertTrue(!m12CHF.equals(m14CHF));
-		assertEquals(m12CHF.amount(), 12);
-		assertEquals(m12CHF.currency(), "CHF");
-		assertTrue(!m12CHF.currency().equals("PLN"));
+		assertEquals(m12CHF, m12CHF); // curr=  val=
+		assertEquals(m12CHF, new Money(12, "CHF")); 
+		assertTrue(!m12CHF.equals(m14CHF)); // curr= val!=
+		assertTrue(!m12CHF.equals(new Money(19, "PLN"))); // curr!= val!=
+		assertTrue(!m12CHF.equals( new Money(12, "PLN"))); // curr!= val=
 		
 	}
 
